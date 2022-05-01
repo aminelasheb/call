@@ -150,6 +150,7 @@ class _ComposeNumberState extends State<ComposeNumber> {
                     onTap: () {
                       Provider.of<Infos>(context,
                           listen: false).onlong=900 ;
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) =>  ContactUI()),
