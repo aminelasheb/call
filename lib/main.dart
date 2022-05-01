@@ -26,7 +26,7 @@ void main() async {
       ),
     ],
     child: MaterialApp(
-        theme: ThemeData(fontFamily: 'myfont', primaryColor: Color(0xff08DF78) ),
+        theme: ThemeData(fontFamily: 'myfont', primaryColor: Color(0xff08DF78)),
         debugShowCheckedModeBanner: false,
         debugShowMaterialGrid: false,
         home: AnimatedSplashScreen(
@@ -35,8 +35,6 @@ void main() async {
             splash: const Image(
               image: AssetImage("assets/logo.png"),
             ),
-
-
             nextScreen: ComposeNumber())
         //  user == null ? UserType() : accueil() // signin()
         ),
