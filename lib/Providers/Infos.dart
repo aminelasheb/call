@@ -1,8 +1,12 @@
+import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/cupertino.dart';
 
 class Infos extends ChangeNotifier {
 
 String Number = "" ;
+List<Contact> contacts = [] ;
+int onlong = 900 ;
+
 
 void AddNum (String x) {
   if(Number.length<=18) {

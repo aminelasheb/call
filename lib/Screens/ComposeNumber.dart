@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:call/globals.dart' as globals;
 import 'package:flutter/services.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 import '../Providers/Infos.dart';
@@ -20,7 +21,6 @@ class _ComposeNumberState extends State<ComposeNumber> {
   @override
   Widget build(BuildContext context) {
     final sizee = MediaQuery.of(context).size;
-    String Number = "+213 65 88 50 774" ;
     return Scaffold(
       backgroundColor: globals.primaryColor,
       body: Container(
@@ -57,7 +57,7 @@ class _ComposeNumberState extends State<ComposeNumber> {
               ),
               child: Center(child: Text(Provider.of<Infos>(context,
                   listen: false)
-                    .Number , style: TextStyle(color: globals.thirdlyColor  , fontSize: sizee.width*0.08 , fontWeight: FontWeight.bold), ),),
+                    .Number , style: TextStyle(color: globals.textColor  , fontSize: sizee.width*0.08 , fontWeight: FontWeight.bold), ),),
             ),
             Provider.of<Infos>(context,
                 listen: false)
@@ -66,7 +66,17 @@ class _ComposeNumberState extends State<ComposeNumber> {
             Container(
               height: sizee.height*0.06,
               child: TextButton.icon(     // <-- TextButton
-                onPressed: () {},
+                onPressed: () {
+                  Fluttertoast.showToast(
+                      msg: "Not implemented yet",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0
+                  );
+                },
                 icon: Icon(
                   Icons.add,
                   size: 24.0,
@@ -96,9 +106,9 @@ class _ComposeNumberState extends State<ComposeNumber> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  num(sizee, "4", "") ,
-                  num(sizee, "5", "ABC") ,
-                  num(sizee, "6", "DEF") ,
+                  num(sizee, "4", "GHI") ,
+                  num(sizee, "5", "JKL") ,
+                  num(sizee, "6", "MNO") ,
                 ],
               ) ,
             ) ,
@@ -109,9 +119,9 @@ class _ComposeNumberState extends State<ComposeNumber> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  num(sizee, "7", "") ,
-                  num(sizee, "8", "ABC") ,
-                  num(sizee, "9", "DEF") ,
+                  num(sizee, "7", "UVW") ,
+                  num(sizee, "8", "XYZ") ,
+                  num(sizee, "9", "") ,
                 ],
               ) ,
             ) ,
@@ -138,10 +148,14 @@ class _ComposeNumberState extends State<ComposeNumber> {
                 children: [
                   InkWell(
                     onTap: () {
+                      Provider.of<Infos>(context,
+                          listen: false).onlong=900 ;
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) =>  ContactUI()),
                       );
+
+
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -154,7 +168,7 @@ class _ComposeNumberState extends State<ComposeNumber> {
 
                       child: Container(
 
-                        child: Icon( Icons.group_outlined , color: globals.thirdlyColor, size: sizee.height*0.05,),
+                        child: Icon( Icons.group_outlined , color: globals.textColor, size: sizee.height*0.05, ),
                         decoration: BoxDecoration(
                           color: globals.primaryColor,
                           borderRadius: const BorderRadius.all(
@@ -214,7 +228,7 @@ class _ComposeNumberState extends State<ComposeNumber> {
 
                       child: Container(
 
-                        child: Icon( Icons.backspace_outlined , color: globals.thirdlyColor, size: sizee.height*0.04,),
+                        child: Icon( Icons.backspace_outlined , color: globals.textColor, size: sizee.height*0.04,),
                         decoration: BoxDecoration(
                           color: globals.primaryColor,
                           borderRadius: const BorderRadius.all(
@@ -270,7 +284,7 @@ class _ComposeNumberState extends State<ComposeNumber> {
                     // icon
                     Text(
                       numb,
-                      style: TextStyle(color: globals.thirdlyColor ,fontFamily: 'myfont-Thin',fontWeight: FontWeight.bold,
+                      style: TextStyle(color: globals.textColor ,fontFamily: 'myfont-Thin',fontWeight: FontWeight.bold,
                       fontSize: sizee.width*0.06),
                     ),
                     Text(

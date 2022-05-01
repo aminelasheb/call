@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'Providers/Infos.dart';
+import 'Screens/ContactUI.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
