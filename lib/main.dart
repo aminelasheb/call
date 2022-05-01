@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:call/Screens/ComposeNumber.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,15 @@ void main() async {
         theme: ThemeData(fontFamily: 'myfont', primaryColor: Color(0xff08DF78) ),
         debugShowCheckedModeBanner: false,
         debugShowMaterialGrid: false,
-        home: ComposeNumber()
+        home: AnimatedSplashScreen(
+            splashIconSize: 120,
+            duration: 2000,
+            splash: const Image(
+              image: AssetImage("assets/logo.png"),
+            ),
+
+
+            nextScreen: ComposeNumber())
         //  user == null ? UserType() : accueil() // signin()
         ),
   ));
